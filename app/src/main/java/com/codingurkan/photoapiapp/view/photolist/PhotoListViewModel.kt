@@ -18,7 +18,6 @@ class PhotoListViewModel : ViewModel() {
     var job : Job? = null
     val apiClient = ApiClient.getClient().create(ApiService::class.java)
 
-
     fun downloadPhotos(apiKey : String){
         job = viewModelScope.launch(Dispatchers.IO){
             var response = apiClient.getImageList(apiKey)

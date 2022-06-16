@@ -32,7 +32,6 @@ class PhotoListActivity : AppCompatActivity() {
     private fun initViewModel(){
         viewModel = ViewModelProvider(this@PhotoListActivity)[PhotoListViewModel::class.java]
     }
-
     private fun initObserver(){
         viewModel?.currentPhotoList?.observe(this){
             initAdapter(it)
@@ -43,12 +42,10 @@ class PhotoListActivity : AppCompatActivity() {
             override fun onClick(data: Hit) {
                 navigateToPhotoDetailsActivity(data)
             }
-
         })
         binding?.rvPhotoList?.adapter = adapter
         binding?.rvPhotoList?.layoutManager = GridLayoutManager(this,3)
     }
-
     private fun navigateToPhotoDetailsActivity(data: Hit){
         val intent = Intent(this@PhotoListActivity,PhotoDetailsActivity::class.java)
         intent.putExtra("photos",data)

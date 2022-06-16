@@ -16,7 +16,6 @@ class PhotoListAdapter(private val photoList : List<Hit>,
         val view = PhotoListItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return PhotoListVH(view)
     }
-
     override fun onBindViewHolder(holder: PhotoListVH, position: Int) {
         with(holder.binding){
             ivList.loadImage(photoList[position].largeImageURL)
@@ -27,7 +26,6 @@ class PhotoListAdapter(private val photoList : List<Hit>,
             }
         }
     }
-
     override fun getItemCount(): Int {
         return photoList.size
     }

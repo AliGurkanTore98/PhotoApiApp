@@ -20,7 +20,6 @@ class PhotoDetailsActivity : AppCompatActivity() {
         getArgs()
         initObserver()
     }
-
     private fun initBinding(){
         binding = ActivityPhotoDetailsBinding.inflate(layoutInflater)
         setContentView(binding?.root)
@@ -38,6 +37,7 @@ class PhotoDetailsActivity : AppCompatActivity() {
             binding?.ivDetails?.loadImage(it.largeImageURL)
             binding?.textUser?.text = it.user
             binding?.textUserId?.text = it.user_id.toString()
+            binding?.ivUserDetails?.loadImage(it.userImageURL)
         }
     }
 }
